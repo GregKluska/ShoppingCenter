@@ -4,6 +4,7 @@ import androidx.room.*
 import com.gregkluska.shoppingcenter.models.CategoryWithStores
 import com.gregkluska.shoppingcenter.models.StoreCategory
 
+@Dao
 interface StoreCategoryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
