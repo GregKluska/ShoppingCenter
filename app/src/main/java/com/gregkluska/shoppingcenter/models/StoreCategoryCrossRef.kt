@@ -1,13 +1,13 @@
 package com.gregkluska.shoppingcenter.models
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(
     tableName = "store_category_ref",
-    primaryKeys = ["store_id", "category_id"]
+    primaryKeys = ["store_id", "category_id"],
+    indices = [
+        Index(value = ["category_id"], unique = false)
+    ]
 )
 data class StoreCategoryCrossRef(
     @ColumnInfo(name = "store_id")
