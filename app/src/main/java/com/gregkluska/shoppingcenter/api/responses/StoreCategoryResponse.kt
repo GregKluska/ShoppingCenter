@@ -2,6 +2,7 @@ package com.gregkluska.shoppingcenter.api.responses
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import com.gregkluska.shoppingcenter.models.StoreCategory
 
 class StoreCategoryResponse(
 
@@ -25,6 +26,14 @@ class StoreCategoryResponse(
     @Expose
     val name: String
 ) {
+
+    fun toStoreCategory(): StoreCategory {
+        return StoreCategory(
+            id = id,
+            name = name
+        )
+    }
+
     override fun toString(): String {
         return "StoreCategoryResponse(statusCode=$statusCode, error='$error', message='$message', id=$id, name='$name')"
     }

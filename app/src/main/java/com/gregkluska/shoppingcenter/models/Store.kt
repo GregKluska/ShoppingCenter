@@ -9,28 +9,19 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "stores")
 data class Store(
 
-    @SerializedName("id")
-    @Expose
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "store_id")
     val id: Int,
 
-    @SerializedName("name")
-    @Expose
     @ColumnInfo(name = "name")
     val name: String,
 
-    @SerializedName("description")
-    @Expose
     @ColumnInfo(name = "description")
     val description: String?,
 
-    @SerializedName("logo")
-    @Expose
     @ColumnInfo(name = "logo")
     val logo: String?,
 
-    @SerializedName("assets")
     @ColumnInfo(name = "image")
     val image: String?
 ) {
