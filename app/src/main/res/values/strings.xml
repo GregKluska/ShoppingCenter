@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ShoppingCenter</string>
+    <string name="store_background_image">Store Background Image</string>
 </resources>

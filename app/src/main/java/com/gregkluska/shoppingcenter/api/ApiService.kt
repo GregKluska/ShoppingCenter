@@ -6,6 +6,7 @@ import com.gregkluska.shoppingcenter.api.responses.StoreResponse
 import com.gregkluska.shoppingcenter.util.GenericApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -16,7 +17,12 @@ interface ApiService {
     ): LiveData<GenericApiResponse<StoreResponse>>
 
     @GET("stores")
-    fun getStoreList(): LiveData<GenericApiResponse<List<StoreResponse>>>
+    fun getStoreList(
+        @Query("_start")
+        start: Int,
+        @Query("_limit")
+        limit: Int
+    ): LiveData<GenericApiResponse<List<StoreResponse>>>
 
     @GET("store-categories/{id}")
     fun getStoreCategory(

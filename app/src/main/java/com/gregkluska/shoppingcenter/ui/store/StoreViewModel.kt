@@ -1,16 +1,14 @@
-package com.gregkluska.shoppingcenter.ui.main
+package com.gregkluska.shoppingcenter.ui.store
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.GeneratedAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.gregkluska.shoppingcenter.api.responses.StoreCategoryResponse
 import com.gregkluska.shoppingcenter.api.responses.StoreResponse
 import com.gregkluska.shoppingcenter.repository.main.MainRepository
 import com.gregkluska.shoppingcenter.util.GenericApiResponse
-import javax.inject.Inject
 
-class MainViewModel
+class StoreViewModel
 @ViewModelInject
 constructor(
     private val mainRepository: MainRepository

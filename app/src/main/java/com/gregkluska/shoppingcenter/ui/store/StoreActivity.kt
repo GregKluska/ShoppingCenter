@@ -1,20 +1,22 @@
-package com.gregkluska.shoppingcenter.ui.main
+package com.gregkluska.shoppingcenter.ui.store
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.gregkluska.shoppingcenter.R
 import com.gregkluska.shoppingcenter.ui.BaseActivity
-import com.gregkluska.shoppingcenter.util.GenericApiResponse.*
+import com.gregkluska.shoppingcenter.ui.main.MainViewModel
+import com.gregkluska.shoppingcenter.util.GenericApiResponse
 import dagger.hilt.android.AndroidEntryPoint
 
-private const val TAG = "MainActivity"
+private const val TAG = "StoreActivity"
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity() {
+class StoreActivity : BaseActivity() {
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: StoreViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,23 +24,20 @@ class MainActivity : BaseActivity() {
 
         viewModel.testStoreListRequest().observe(this, Observer { response ->
             when (response) {
-                
-                is ApiSuccessResponse -> {
+
+                is GenericApiResponse.ApiSuccessResponse -> {
                     Log.d(TAG, "STORELIST RESPONSE : ${response.body}")
                 }
 
-                is ApiErrorResponse -> {
+                is GenericApiResponse.ApiErrorResponse -> {
                     Log.d(TAG, "STORELIST RESPONSE : ${response.errorMessage}")
                 }
 
-                is ApiEmptyResponse -> {
+                is GenericApiResponse.ApiEmptyResponse -> {
                     Log.d(TAG, "STORELIST RESPONSE : Empty Response")
                 }
-                
+
             }
         })
     }
-
-
-
 }

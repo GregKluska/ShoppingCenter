@@ -6,8 +6,11 @@ import com.gregkluska.shoppingcenter.api.responses.StoreCategoryResponse
 import com.gregkluska.shoppingcenter.api.responses.StoreResponse
 import com.gregkluska.shoppingcenter.persistence.StoreCategoryDao
 import com.gregkluska.shoppingcenter.persistence.StoreDao
+import com.gregkluska.shoppingcenter.util.Constants.Companion.STORES_PER_PAGE
 import com.gregkluska.shoppingcenter.util.GenericApiResponse
 import javax.inject.Inject
+
+private const val TAG = "MainRepository"
 
 class MainRepository
 @Inject
@@ -19,7 +22,7 @@ constructor(
 {
 
     fun testStoreListRequest(): LiveData<GenericApiResponse<List<StoreResponse>>> {
-        return apiService.getStoreList()
+        return apiService.getStoreList(1, STORES_PER_PAGE)
     }
 
     fun testStoreCatListRequest(): LiveData<GenericApiResponse<List<StoreCategoryResponse>>> {
