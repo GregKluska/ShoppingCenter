@@ -16,6 +16,7 @@ import com.gregkluska.shoppingcenter.persistence.AppDatabase.Companion.DATABASE_
 import com.gregkluska.shoppingcenter.persistence.StoreCategoryDao
 import com.gregkluska.shoppingcenter.persistence.StoreDao
 import com.gregkluska.shoppingcenter.repository.main.MainRepository
+import com.gregkluska.shoppingcenter.ui.main.MainRecyclerAdapter
 import com.gregkluska.shoppingcenter.util.Constants.Companion.BASE_URL
 import com.gregkluska.shoppingcenter.util.LiveDataCallAdapterFactory
 import dagger.Module

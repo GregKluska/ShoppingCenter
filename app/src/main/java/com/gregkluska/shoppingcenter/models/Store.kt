@@ -38,9 +38,7 @@ data class Store(
 
         if (id != other.id) return false
         if (name != other.name) return false
-        if (description != other.description) return false
         if (logo != other.logo) return false
-        if (image != other.image) return false
 
         return true
     }
