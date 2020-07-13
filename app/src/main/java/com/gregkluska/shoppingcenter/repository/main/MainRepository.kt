@@ -21,6 +21,7 @@ constructor(
 )
 {
 
+
     fun testStoreListRequest(): LiveData<GenericApiResponse<List<StoreResponse>>> {
         return apiService.getStoreList(1, STORES_PER_PAGE)
     }

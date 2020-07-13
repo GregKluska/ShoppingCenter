@@ -20,10 +20,6 @@ constructor(
         return mainRepository.testStoreListRequest();
     }
 
-    fun testStoreRequest(): LiveData<GenericApiResponse<StoreResponse>> {
-        return mainRepository.testStoreRequest();
-    }
-
     fun testStoreCatListRequest(): LiveData<GenericApiResponse<List<StoreCategoryResponse>>> {
         return mainRepository.testStoreCatListRequest();
     }
